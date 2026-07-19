@@ -1,38 +1,46 @@
-import { Room } from "@/types/room";
-
 type Props = {
-  room: Room;
+  title: string;
+  users: number;
+  likes: string;
 };
 
-export default function RoomCard({ room }: Props) {
+export default function RoomCard({
+  title,
+  users,
+  likes,
+}: Props) {
   return (
-    <div className="mb-5 overflow-hidden rounded-3xl bg-[#211135] shadow-lg">
+    <div className="overflow-hidden rounded-3xl bg-[#24103d] shadow-lg">
 
-      <div className="h-44 bg-gradient-to-r from-fuchsia-700 to-violet-700" />
+      <div className="relative h-40 bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-700">
+
+        <div className="absolute left-3 top-3 rounded-full bg-red-600 px-3 py-1 text-xs font-bold">
+          🔴 CANLI
+        </div>
+
+        <div className="absolute right-3 top-3 rounded-full bg-black/50 px-3 py-1 text-xs">
+          👥 {users}
+        </div>
+
+      </div>
 
       <div className="p-4">
 
-        <div className="mb-2 flex items-center justify-between">
+        <h3 className="text-lg font-bold">
+          {title}
+        </h3>
 
-          <h2 className="text-lg font-bold text-white">
-            {room.title}
-          </h2>
-
-          <span className="rounded-full bg-green-600 px-2 py-1 text-xs">
-            CANLI
-          </span>
-
-        </div>
-
-        <p className="text-sm text-purple-300">
-          {room.category}
+        <p className="mt-2 text-sm text-gray-300">
+          Eğlence • Sohbet • Müzik
         </p>
 
-        <div className="mt-4 flex justify-between text-sm text-purple-200">
+        <div className="mt-4 flex items-center justify-between">
 
-          <span>👥 {room.current_users}</span>
+          <span>❤️ {likes}</span>
 
-          <span>🎤 {room.max_mics}</span>
+          <button className="rounded-full bg-fuchsia-600 px-4 py-2 text-sm font-semibold">
+            Katıl
+          </button>
 
         </div>
 
