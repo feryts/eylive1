@@ -3,23 +3,27 @@ export interface Room {
 
   title: string;
 
-  cover: string;
+  description: string | null;
 
   category: string;
 
-  hostId: string;
+  cover_url: string | null;
 
-  users: number;
+  background_url: string | null;
 
-  likes: number;
+  current_users: number;
 
-  gifts: number;
+  max_users: number;
 
-  micCount: number;
+  max_mics: number;
 
-  locked: boolean;
+  is_locked: boolean;
 
-  password: boolean;
+  allow_games: boolean;
 
-  background: string;
+  allow_gifts: boolean;
+
+  is_active: boolean;
+
+  created_at: string;
 }

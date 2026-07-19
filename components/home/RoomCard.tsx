@@ -1,39 +1,41 @@
+import { Room } from "@/types/room";
+
 type Props = {
-  title: string;
-  users: number;
-  likes: string;
+  room: Room;
 };
 
-export default function RoomCard({
-  title,
-  users,
-  likes,
-}: Props) {
+export default function RoomCard({ room }: Props) {
   return (
-    <div className="mb-5 rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+    <div className="mb-5 overflow-hidden rounded-3xl bg-[#211135] shadow-lg">
 
-      <div className="flex items-center justify-between">
+      <div className="h-44 bg-gradient-to-r from-fuchsia-700 to-violet-700" />
 
-        <div>
-          <h2 className="text-xl font-bold text-white">
-            🎙️ {title}
+      <div className="p-4">
+
+        <div className="mb-2 flex items-center justify-between">
+
+          <h2 className="text-lg font-bold text-white">
+            {room.title}
           </h2>
 
-          <p className="mt-2 text-sm text-purple-200">
-            Herkese açık sesli oda
-          </p>
+          <span className="rounded-full bg-green-600 px-2 py-1 text-xs">
+            CANLI
+          </span>
+
         </div>
 
-        <div className="text-5xl">
-          🎤
+        <p className="text-sm text-purple-300">
+          {room.category}
+        </p>
+
+        <div className="mt-4 flex justify-between text-sm text-purple-200">
+
+          <span>👥 {room.current_users}</span>
+
+          <span>🎤 {room.max_mics}</span>
+
         </div>
 
-      </div>
-
-      <div className="mt-5 flex justify-between text-sm text-purple-100">
-        <span>👥 {users}</span>
-        <span>❤️ {likes}</span>
-        <span>🎁 25K</span>
       </div>
 
     </div>

@@ -7,5 +7,10 @@ export async function getRooms() {
     .eq("is_active", true)
     .order("current_users", { ascending: false });
 
-  return { data, error };
+  if (error) {
+    console.error(error);
+    return [];
+  }
+
+  return data;
 }
