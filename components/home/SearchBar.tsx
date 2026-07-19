@@ -1,12 +1,12 @@
 export default function SearchBar() {
   return (
-    <div className="mb-6">
+    <div className="mb-5">
+
       <input
-        type="text"
-        placeholder="Oda veya yayıncı ara..."
-        className="w-full rounded-2xl bg-white/10 border border-white/10 p-4 text-white placeholder:text-gray-300 outline-none"
+        placeholder="Oda, kullanıcı veya ID ara..."
+        className="w-full rounded-3xl border border-white/10 bg-white/10 p-5 text-white placeholder:text-gray-300 outline-none backdrop-blur-xl"
       />
+
     </div>
   );
 }
-

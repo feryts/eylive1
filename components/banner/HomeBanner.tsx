@@ -1,20 +1,27 @@
 export default function HomeBanner() {
   return (
-    <div className="mb-6 overflow-hidden rounded-3xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-700 p-6 shadow-xl">
+    <div className="mb-6 h-40 rounded-3xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-700 p-6">
 
-      <h2 className="text-2xl font-bold text-white">
-        🎉 Hoş Geldin
-      </h2>
+      <div className="flex h-full flex-col justify-between">
 
-      <p className="mt-2 text-purple-100">
-        Günlük görevlerini tamamla ve ödüller kazan.
-      </p>
+        <div>
 
-      <button className="mt-5 rounded-2xl bg-white px-5 py-3 font-bold text-purple-700">
-        Etkinlikleri Gör
-      </button>
+          <h2 className="text-3xl font-bold text-white">
+            EyLive Festival
+          </h2>
+
+          <p className="mt-2 text-purple-100">
+            Katıl, arkadaş edin ve ödüller kazan.
+          </p>
+
+        </div>
+
+        <button className="w-36 rounded-full bg-white py-3 font-bold text-purple-700">
+          Katıl
+        </button>
+
+      </div>
 
     </div>
   );
 }
-
