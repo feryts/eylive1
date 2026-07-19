@@ -6,9 +6,13 @@ import Categories from "@/components/home/Categories";
 import RoomCard from "@/components/home/RoomCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
-export default function HomePage() {
+import { getRooms } from "@/services/rooms/getRooms";
+
+export default async function HomePage() {
+  const rooms = await getRooms();
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0d001c] via-[#1b0038] to-[#090011] text-white pb-28">
+    <main className="min-h-screen bg-gradient-to-b from-[#090011] via-[#18002f] to-[#090011] pb-28">
 
       <div className="mx-auto max-w-md px-4 pt-5">
 
@@ -22,39 +26,28 @@ export default function HomePage() {
 
         <Categories />
 
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">
+        <div className="mb-5 flex items-center justify-between">
+
+          <h2 className="text-2xl font-bold text-white">
             🔥 Trend Odalar
           </h2>
 
           <button className="text-purple-300">
-            Tümü
+            Tümünü Gör
           </button>
+
         </div>
 
-        <RoomCard
-          title="Türkiye Sohbet"
-          users={125}
-          likes="4.8K"
-        />
+        <div className="space-y-5">
 
-        <RoomCard
-          title="Müzik Keyfi"
-          users={98}
-          likes="2.1K"
-        />
+          {rooms.map((room) => (
+            <RoomCard
+              key={room.id}
+              room={room}
+            />
+          ))}
 
-        <RoomCard
-          title="Arkadaşlık"
-          users={176}
-          likes="7.3K"
-        />
-
-        <RoomCard
-          title="Global Chat"
-          users={312}
-          likes="15K"
-        />
+        </div>
 
       </div>
 
